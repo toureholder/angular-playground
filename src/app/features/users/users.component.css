@@ -1,0 +1,7 @@
+span {
+  font-size: 1.4rem;
+}
+
+.buttons button:not(:last-child) {
+  margin-right: 1rem;
+}

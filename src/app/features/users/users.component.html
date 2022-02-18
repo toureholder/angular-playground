@@ -1,9 +1,21 @@
-<ul *ngIf="users$ | async as users; else loading">
-  <li data-test="user-element" *ngFor="let user of users.data">
+<div class="buttons" *ngIf="users$ | async as users; else loading">
+  <button
+    data-test="user-element"
+    *ngFor="let user of users.data"
+    (click)="selectUser(user.firstName)"
+  >
     {{ user.firstName }}
-  </li>
-</ul>
+  </button>
+</div>
 
+<br />
+
+<div>
+  <span>Selected user:</span>
+  <span data-test="selected-user-element"> {{ selectedUser }} </span>
+</div>
+
+<!-- Loading -->
 <ng-template #loading>
   <p>Carregando...</p>
 </ng-template>

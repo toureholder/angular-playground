@@ -1,0 +1,20 @@
+span {
+  font-size: 2rem;
+}
+
+.app-bar {
+  background-color: tomato;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  padding: var(--default-padding);
+}
+
+.app-brand {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.app-nav-spacer {
+  flex: 1;
+}
