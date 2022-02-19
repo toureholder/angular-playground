@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { UserStreamService } from '../../services/user-stream/user-stream.service';
 
 import { NavComponent } from './nav.component';
@@ -14,6 +15,7 @@ describe('NavComponent', () => {
 
     await TestBed.configureTestingModule({
       declarations: [NavComponent],
+      imports: [RouterTestingModule],
       providers: [
         { provide: UserStreamService, useValue: mockUserStreamService },
       ],

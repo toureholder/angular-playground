@@ -1,5 +1,5 @@
 <div class="app-bar">
-  <span class="app-brand"> Logo </span>
+  <a [routerLink]="'/home'"><span class="app-brand"> Logo </span></a>
   <span class="app-nav-spacer"></span>
   <span data-test="user-el">{{ user$ | async }}</span>
 </div>

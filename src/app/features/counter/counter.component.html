@@ -1,0 +1,10 @@
+<div class="container">
+  <p class="bignumber">{{ count$ | async }}</p>
+
+  <div class="add-subtract-buttons">
+    <button (click)="increment()">Increment</button>
+    <button (click)="decrement()">Decrement</button>
+  </div>
+
+  <button (click)="reset()" class="reset-button">Reset</button>
+</div>
