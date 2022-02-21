@@ -1,5 +1,5 @@
 <div class="container">
-  <p class="bignumber">{{ count$ | async }}</p>
+  <p class="bignumber">{{ count$ | async | json }}</p>
 
   <div class="add-subtract-buttons">
     <button (click)="increment()">Increment</button>

@@ -5,7 +5,11 @@ import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { MainComponent } from './layout/main/main.component';
 import { NavComponent } from './layout/nav/nav.component';
-import { counterReducer } from './state/state.reducers';
+import {
+  countReducer,
+  stateReducer,
+  userReducer,
+} from './state/state.reducers';
 
 @NgModule({
   declarations: [MainComponent, NavComponent],
@@ -13,7 +17,11 @@ import { counterReducer } from './state/state.reducers';
     BrowserModule,
     HttpClientModule,
     RouterModule,
-    StoreModule.forRoot({ count: counterReducer }),
+    StoreModule.forRoot({
+      state: stateReducer,
+      count: countReducer,
+      user: userReducer,
+    }),
   ],
   exports: [BrowserModule, HttpClientModule, MainComponent],
 })

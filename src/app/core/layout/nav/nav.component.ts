@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Observable, Subject } from 'rxjs';
 import { UserStreamService } from '../../services/user-stream/user-stream.service';
+import { selectFeatureUser } from '../../state/state.selectors';
 
 @Component({
   selector: 'app-nav',
@@ -8,7 +10,9 @@ import { UserStreamService } from '../../services/user-stream/user-stream.servic
   styleUrls: ['./nav.component.css'],
 })
 export class NavComponent {
-  constructor(private userStreamService: UserStreamService) {}
+  user$: Observable<string> | undefined;
 
-  user$ = this.userStreamService.stream;
+  constructor(private store: Store) {
+    this.user$ = store.select(selectFeatureUser);
+  }
 }
